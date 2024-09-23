@@ -8,14 +8,14 @@ spring:
           uri:
             lb://task-service
           predicates:
-            - Path=/api/v1/task/**
+            - Path=/api/v1/task/**, v3/api-docs/task
         - id: keycloak-admin-client-docs
           uri:
             http://localhost:8181
           predicates:
               - Path=/v3/api-docs/keycloak-admin-client, api/v1/**
-          filters:
-              - RewritePath=/v3/api-docs/keycloak-admin-client,/v3/api-docs, api/v1/**
+          #filters:
+             #- RewritePath=/v3/api-docs/keycloak-admin-client,/v3/api-docs, api/v1/**
 
   main:
     web-application-type: reactive
