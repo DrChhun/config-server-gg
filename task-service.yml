@@ -1,4 +1,10 @@
 spring:
+    security:
+    oauth2:
+      resource-server:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/realm-2
+          jwk-set-uri: http://localhost:8080/realms/realm-2/protocol/openid-connect/certs
   application:
     name: task-service
   datasource:
