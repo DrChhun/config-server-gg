@@ -12,20 +12,20 @@ server:
 keycloak:
   realm: realm-2
   resource: client11
-#  auth-server-url: http://localhost:8080/auth/ #docker container
+  #  auth-server-url: http://localhost:8080/auth/ #docker container
   auth-server-url: http://localhost:8080/
   credentials:
     username: 'Viseth'
     password: 'Vi-222777'
     client-id: client11
-    secret: bcgXWgfeftngcsqibrscaOIrHF65tagK
+    secret: CP8dYmWN9O3fRKdn0yGq65O2uCxaS7op
     provider: secret
 #config swagger
 springdoc:
   swagger-ui:
     oauth:
       client-id: client11
-      client-secret: bcgXWgfeftngcsqibrscaOIrHF65tagK
+      client-secret: CP8dYmWN9O3fRKdn0yGq65O2uCxaS7op
       realm: realm-2
     tags-sorter: alpha
 logging:
