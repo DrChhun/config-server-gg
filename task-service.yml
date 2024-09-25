@@ -19,6 +19,22 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
+resilience4j:
+  circuitbreaker:
+    instances:
+      kanyeClient:
+        recordExceptions:
+          - java.io.IOException
+          - java.util.concurrent.TimeoutException
+        slidingWindowSize: 5
+        failureRateThreshold: 25
+        slowCallRateThreshold: 25 
+        slowCallDurationThreshold: 2s
+        waitDurationInOpenState: 10s
+        permittedNumberOfCallsInHalfOpenState: 3
+        minimumNumberOfCalls: 5
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+
 eureka:
   client:
     service-url:
